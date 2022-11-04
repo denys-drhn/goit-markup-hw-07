@@ -1030,14 +1030,14 @@ calc (100% - {	сумма зазоров в строке * значение ма
 
 /* portfolio card */
 
-.portfolio-card{
+.portfolio-work__card{
 	padding: 20px 24px;
 	border-left: 1px solid var(--border-color);
 	border-right: 1px solid var(--border-color);
 	border-bottom: 1px solid var(--border-color);
 }
 
-.portfolio-card__title{
+.portfolio-work__title{
 	font-weight: 700;
 	font-size: 18px;
 	line-height: 2;
@@ -1045,7 +1045,7 @@ calc (100% - {	сумма зазоров в строке * значение ма
 	margin-bottom: 4px;
 }
 
-.portfolio-card__subtitle{
+.portfolio-work__subtitle{
 	color: var(--secondary-text-color);
 	font-size: 16px;
 	line-height: 1.88;
