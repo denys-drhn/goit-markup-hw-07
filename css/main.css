@@ -12,6 +12,8 @@
   --background-hero-color: #C4C4C4;
   --icons-color: #AFB1B8;
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --main-font: "Roboto", sans-serif;
+  --logo-font: "Raleway", sans-serif;
 }
 
 /* roboto-regular - latin_cyrillic */
@@ -331,7 +333,7 @@ body {
   color: var(--primery-text-color);
   background-color: var(--main-white-color);
   font-size: 14px;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--main-font);
   letter-spacing: 0.03em;
 }
 
@@ -407,7 +409,7 @@ img {
 
 .logo {
   color: var(--accent-color);
-  font-family: "Raleway", sans-serif;
+  font-family: var(--logo-font);
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
@@ -576,46 +578,7 @@ img {
   background-color: var(--secondary-accent-color);
 }
 
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  opacity: 1;
-  -webkit-transition: opacity 250ms var(--timing-function);
-  transition: opacity 250ms var(--timing-function);
-}
-
-.backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-  /* visibility: hidden; ? */
-}
-
-.backdrop.is-hidden .modal {
-  -webkit-transform: scale(0.5) translate(-50%, -50%);
-          transform: scale(0.5) translate(-50%, -50%);
-}
-
-.modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 528px;
-  padding: 40px;
-  background-color: var(--main-white-color);
-  -webkit-transform: scale(1) translate(-50%, -50%);
-          transform: scale(1) translate(-50%, -50%);
-  -webkit-transition: -webkit-transform 250ms var(--timing-function);
-  transition: -webkit-transform 250ms var(--timing-function);
-  transition: transform 250ms var(--timing-function);
-  transition: transform 250ms var(--timing-function), -webkit-transform 250ms var(--timing-function);
-}
-
-.modal-button {
+.close-button {
   width: 30px;
   height: 30px;
   display: -webkit-box;
@@ -635,27 +598,58 @@ img {
   right: 8px;
   cursor: pointer;
 }
-
-.modal-button__icon {
+.close-button__icon {
   fill: currentColor;
   -webkit-transition: fill 250ms var(--timing-function);
   transition: fill 250ms var(--timing-function);
 }
-
-.modal-button:hover .modal-button__icon {
+.close-button:hover .close-button__icon, .close-button:focus .close-button__icon {
   fill: var(--accent-color);
 }
 
-/* signup-form */
-.modal-form__title {
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  -webkit-transition: opacity 250ms var(--timing-function);
+  transition: opacity 250ms var(--timing-function);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+  -webkit-transform: scale(0.5) translate(-50%, -50%);
+          transform: scale(0.5) translate(-50%, -50%);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 528px;
+  padding: 40px;
+  background-color: var(--main-white-color);
+  -webkit-transform: scale(1) translate(-50%, -50%);
+          transform: scale(1) translate(-50%, -50%);
+  -webkit-transition: -webkit-transform 250ms var(--timing-function);
+  transition: -webkit-transform 250ms var(--timing-function);
+  transition: transform 250ms var(--timing-function);
+  transition: transform 250ms var(--timing-function), -webkit-transform 250ms var(--timing-function);
+}
+.modal__title {
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
   text-align: center;
   margin-bottom: 20px;
 }
-
-.modal-form__label {
+.modal__label {
   color: var(--secondary-text-color);
   font-size: 12px;
   line-height: 1.16;
@@ -663,24 +657,20 @@ img {
   display: block;
   margin-bottom: 4px;
 }
-
-.modal-form__thumb {
+.modal__thumb {
   position: relative;
   margin-bottom: 10px;
   -webkit-transition: fill 250ms var(--timing-function);
   transition: fill 250ms var(--timing-function);
 }
-
-.modal-form__thumb:hover {
+.modal__thumb:hover {
   fill: var(--accent-color);
 }
-
-.modal-form__input {
+.modal__input {
   width: 100%;
   height: 40px;
   padding: 12px 12px 12px 42px;
   outline: none;
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -693,18 +683,10 @@ img {
   -webkit-transition: border 250ms var(--timing-function);
   transition: border 250ms var(--timing-function);
 }
-
-.modal-form__input,
-.modal-form__input:focus ~ .modal-form__icon {
-  fill: var(--accent-color);
-}
-
-.modal-form__input:hover,
-.modal-form__input:focus {
+.modal__input:hover, .modal__input:focus {
   border: 1px solid var(--accent-color);
 }
-
-.modal-form__icon {
+.modal__icon {
   position: absolute;
   width: 18px;
   height: 18px;
@@ -715,8 +697,10 @@ img {
   -webkit-transition: fill 250ms var(--timing-function);
   transition: fill 250ms var(--timing-function);
 }
-
-.modal-form__comment {
+.modal__input:focus ~ .modal__icon {
+  fill: var(--accent-color);
+}
+.modal__comment {
   width: 100%;
   height: 120px;
   resize: none;
@@ -733,8 +717,7 @@ img {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 }
-
-.form-comment::-webkit-input-placeholder {
+.modal__comment::-webkit-input-placeholder {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -743,8 +726,7 @@ img {
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
-
-.form-comment::-moz-placeholder {
+.modal__comment::-moz-placeholder {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -753,8 +735,7 @@ img {
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
-
-.form-comment:-ms-input-placeholder {
+.modal__comment:-ms-input-placeholder {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -763,8 +744,7 @@ img {
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
-
-.form-comment::-ms-input-placeholder {
+.modal__comment::-ms-input-placeholder {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -773,8 +753,7 @@ img {
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
-
-.form-comment::placeholder {
+.modal__comment::placeholder {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -783,61 +762,7 @@ img {
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
-
-/* Checkbox  */
-.checkbox__input {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-
-.checkbox__label {
-  color: var(--secondary-text-color);
-  line-height: 1.71;
-  cursor: pointer;
-}
-
-.terms-link {
-  color: var(--accent-color);
-}
-
-.checkbox {
-  position: relative;
-  margin-bottom: 30px;
-}
-
-.checkbox__label {
-  padding-left: 36px;
-}
-
-.checkbox__icon {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  fill: var(--main-white-color);
-  fill-opacity: 0;
-  top: 50%;
-  left: 13px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 16px;
-  height: 15px;
-  border: 2px solid var(--primery-text-color);
-  border-radius: 2px;
-  -webkit-transition: background-color 250ms var(--timing-function), fill-opacity 250ms var(--timing-function);
-  transition: background-color 250ms var(--timing-function), fill-opacity 250ms var(--timing-function);
-}
-
-.checkbox__input:checked + .checkbox__icon {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  border: none;
-  fill: var(--main-white-color);
-  fill-opacity: 1;
-}
-
-/* --- --------------------------------------------*/
-.modal-form__button {
+.modal__button {
   color: var(--main-white-color);
   background-color: var(--accent-color);
   font-family: inherit;
@@ -864,11 +789,52 @@ img {
   -webkit-transition: background-color 250ms var(--timing-function);
   transition: background-color 250ms var(--timing-function);
 }
-
-.modal-form__button:hover,
-.modal-form__button:focus {
+.modal__button:hover, .modal__button:focus {
   background: var(--secondary-accent-color);
   outline: none;
+}
+
+.checkbox {
+  position: relative;
+  margin-bottom: 30px;
+}
+.checkbox__input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.checkbox__icon {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  fill: var(--main-white-color);
+  fill-opacity: 0;
+  top: 50%;
+  left: 13px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--primery-text-color);
+  border-radius: 2px;
+  -webkit-transition: background-color 250ms var(--timing-function), fill-opacity 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function), fill-opacity 250ms var(--timing-function);
+}
+.checkbox__input:checked + .checkbox__icon {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  border: none;
+  fill: var(--main-white-color);
+  fill-opacity: 1;
+}
+.checkbox__label {
+  color: var(--secondary-text-color);
+  line-height: 1.71;
+  cursor: pointer;
+  padding-left: 36px;
+}
+.checkbox__label--blue {
+  color: var(--accent-color);
 }
 
 .features {
