@@ -6,7 +6,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>goit-markup-hw-07</title>
-
 	<link rel="stylesheet" href="./css/main.min.css" />
 
 </head>
@@ -63,41 +62,41 @@
 
 				<div class="backdrop is-hidden" data-modal>
 					<div class="modal">
-						<button class="modal-button" type="button" data-modal-close>
-							<svg class="modal-button__icon" width="11" height="11">
+						<button class="close-button" type="button" data-modal-close>
+							<svg class="close-button__icon" width="11" height="11">
 								<use href="./images/icons.svg#icon-vector"></use>
 							</svg>
 						</button>
 
-						<form class="modal-form" name="signup-form" autocomplete="off" novalidate>
-							<h2 class="modal-form__title">Залиште свої дані, ми вам передзвонимо</h2>
+						<form name="signup-form" autocomplete="off" novalidate>
+							<h2 class="modal__title">Залиште свої дані, ми вам передзвонимо</h2>
 
-							<label class="modal-form__label" for="name">Ім'я</label>
-							<div class="modal-form__thumb">
-								<input class="modal-form__input" id="name" type="text" name="name" />
-								<svg class="modal-form__icon">
+							<label class="modal__label" for="name">Ім'я</label>
+							<div class="modal__thumb">
+								<input class="modal__input" id="name" type="text" name="name" />
+								<svg class="modal__icon">
 									<use href="./images/icons.svg#icon-person"></use>
 								</svg>
 							</div>
 
-							<label class="modal-form__label" for="phone">Телефон</label>
-							<div class="modal-form__thumb">
-								<input class="modal-form__input" id="phone" type="tel" name="tel" />
-								<svg class="modal-form__icon">
+							<label class="modal__label" for="phone">Телефон</label>
+							<div class="modal__thumb">
+								<input class="modal__input" id="phone" type="tel" name="tel" />
+								<svg class="modal__icon">
 									<use href="./images/icons.svg#icon-phone"></use>
 								</svg>
 							</div>
 
-							<label class="modal-form__label" for="mail">Пошта</label>
-							<div class="modal-form__thumb">
-								<input class="modal-form__input" id="mail" type="email" name="mail" />
-								<svg class="modal-form__icon">
+							<label class="modal__label" for="mail">Пошта</label>
+							<div class="modal__thumb">
+								<input class="modal__input" id="mail" type="email" name="mail" />
+								<svg class="modal__icon">
 									<use href="./images/icons.svg#icon-email"></use>
 								</svg>
 							</div>
 
-							<label class="modal-form__label" for="comment">Коментар</label>
-							<textarea class="modal-form__comment" id="comment" name="comment"
+							<label class="modal__label" for="comment">Коментар</label>
+							<textarea class="modal__comment" id="comment" name="comment"
 								placeholder="Введіть текст"></textarea>
 
 							<!-- Checkbox -->
@@ -109,11 +108,11 @@
 									<use href="./images/icons.svg#icon-check"></use>
 								</svg>
 								<label class="checkbox__label" for="terms-checkbox">Погоджуюся з розсилкою та приймаю <a
-										class="terms-link" href="#">Умови договору</a>
+										class="checkbox__label--blue" href="#">Умови договору</a>
 								</label>
 							</div>
 
-							<button class="modal-form__button" type="submit">Відправити</button>
+							<button class="modal__button" type="submit">Відправити</button>
 
 						</form>
 
