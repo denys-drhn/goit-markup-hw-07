@@ -2,4 +2,4 @@
 
 <!-- header-address__link:focus ? -->
 
-<!-- focus modal when it closed ? -->
+<!-- focus modal when it closed (DONE -> ADD visibility: hidden;)  -->

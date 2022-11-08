@@ -621,6 +621,7 @@ img {
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 .backdrop.is-hidden .modal {
   -webkit-transform: scale(0.5) translate(-50%, -50%);
@@ -694,8 +695,8 @@ img {
   left: 12px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  -webkit-transition: fill 250ms var(--timing-function);
-  transition: fill 250ms var(--timing-function);
+  -webkit-transition: fill 10ms var(--timing-function);
+  transition: fill 10ms var(--timing-function);
 }
 .modal__input:focus ~ .modal__icon {
   fill: var(--accent-color);
